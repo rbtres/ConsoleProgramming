@@ -9,6 +9,7 @@ public class LoadResources : MonoBehaviour {
 
 	void Awake()
 	{
+        Probability.CumlativeStandDev(1200, 1000,100);
 		if(LR != null)
 		{
 			GameObject.Destroy(LR);

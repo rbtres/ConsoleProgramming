@@ -10,6 +10,6 @@ public class CreateCube : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		GameObject c = (GameObject)Instantiate(LoadResources.LR.BUILDING);
+		//GameObject c = (GameObject)Instantiate(LoadResources.LR.BUILDING);
 	}
 }
