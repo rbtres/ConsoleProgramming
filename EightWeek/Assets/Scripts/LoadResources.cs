@@ -7,6 +7,7 @@ public class LoadResources : MonoBehaviour {
 	// Use this for initialization
 	public GameObject BUILDING;
 
+    //--------------------------------------------------------------------------------------------
 	void Awake()
 	{
         Probability.CumlativeStandDev(1200, 1000,100);
@@ -20,6 +21,8 @@ public class LoadResources : MonoBehaviour {
 		}
 		DontDestroyOnLoad(this);
 	}
+
+    //--------------------------------------------------------------------------------------------
 	void Start () {
 		LoadAllResources();
 	}

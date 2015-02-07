@@ -17,6 +17,8 @@ public class Probability : MonoBehaviour {
         
         return y;
     }
+
+    //--------------------------------------------------------------------------------------------
     static public float CumlativeStandDev(float randVariable, float mean, float standDev)
     {
         float ans = 0;

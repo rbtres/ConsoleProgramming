@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AlibiEnums\VisualAlibis.cs" />
      <Compile Include="Assets\Scripts\CreateCube.cs" />
      <Compile Include="Assets\Scripts\LoadResources.cs" />
      <Compile Include="Assets\Scripts\MathUtil\Probability.cs" />
+     <Compile Include="Assets\Scripts\VisualAlibiFactory.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
