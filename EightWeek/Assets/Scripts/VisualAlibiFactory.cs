@@ -27,6 +27,7 @@ public class VisualAlibiFactory
         v._eyeColor = EyeColor.Blue;
         v._hairColor = HairColor.Black;
         v._skinColor = SkinColor.Black;
+        SVisualCount.Increment(v);
         return v;
     }
 }
@@ -38,7 +39,7 @@ public struct VisualCount
     int BlondHair;
     int BlackHair;
     int RedHair;
-
+    
     int HazelEyes;
     int BlueEyes;
     int GreenEyes;
@@ -54,18 +55,56 @@ public struct VisualCount
     }
     public void Increment(VisualTraits v)
     {
-
+        IncrementHairColor(v._hairColor);
+        IncrementEyeColor(v._eyeColor);
+        IncrementSkinColor(v._skinColor);
     }
     private void IncrementHairColor(HairColor h)
     {
-
+        switch(h)
+        {
+            case HairColor.Black:
+                BlackHair++;
+                break;
+            case HairColor.Blond:
+                BlondHair++;
+                break;
+            case HairColor.Brown:
+                BrownHair++;
+                break;
+            case HairColor.Red:
+                RedHair++;
+                break;
+        }
     }
     private void IncrementEyeColor(EyeColor e)
     {
-
+        switch(e)
+        {
+            case EyeColor.Blue:
+                BlueEyes++;
+                break;
+            case EyeColor.Green:
+                GreenEyes++;
+                break;
+            case EyeColor.Hazel:
+                HazelEyes++;
+                break;
+        }
     }
     private void IncrementSkinColor(SkinColor s)
     {
-
+        switch(s)
+        {
+            case SkinColor.Black:
+                BlackSkin++;
+                break;
+            case SkinColor.Brown:
+                BrownSkin++;
+                break;
+            case SkinColor.White:
+                WhiteSkin++;
+                break;
+        }
     }
 }
