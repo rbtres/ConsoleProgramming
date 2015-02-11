@@ -6,7 +6,7 @@ public class Probability : MonoBehaviour {
     //cumlative probabilty of ans < randVariable based on the mean and standDev
     //so if you wanted to know how long a light bulb would last for 1200 hours or less
     //the mean would be 1000 and dev would be 100
-    // you would use Stand...(1200,1000,100) the percentage would be .97
+    // you would use CumlativeStand...(1200,1000,100) the percentage would be .97
     static public float StandardDeviation(float randVariable, float mean, float standDev)
     {
         float y = (float)1.0f / (standDev * Mathf.Sqrt(2.0f * Mathf.PI));
@@ -26,7 +26,6 @@ public class Probability : MonoBehaviour {
         {
             ans += StandardDeviation(i, mean, standDev);
         }
-        Debug.Log(ans);
         return ans;
     }
 }

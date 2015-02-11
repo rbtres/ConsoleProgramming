@@ -4,12 +4,13 @@ using System.Collections;
 public class VisualAlibiFactory
 {
     static private VisualAlibiFactory _visualAlibi = null;
+    private AlibiPercentage _alibiPercent;
 
-    public VisualCount SVisualCount;
+    public VisualCount _visualCount;
     //--------------------------------------------------------------------------------------------
-    VisualAlibiFactory()
+    public VisualAlibiFactory()
     {
-        SVisualCount.Create();
+        _visualCount.Create();
     }
     public static VisualAlibiFactory getInstance()
     {
@@ -22,12 +23,9 @@ public class VisualAlibiFactory
     //--------------------------------------------------------------------------------------------
     public VisualTraits CreateVisualTrait()
     {
-        //math to be done in here
-        VisualTraits v;
-        v._eyeColor = EyeColor.Blue;
-        v._hairColor = HairColor.Black;
-        v._skinColor = SkinColor.Black;
-        SVisualCount.Increment(v);
+        VisualTraits v = _alibiPercent.GetVisualAlibi(_visualCount);
+
+        _visualCount.Increment(v);
         return v;
     }
 }
@@ -35,31 +33,39 @@ public class VisualAlibiFactory
 //--------------------------------------------------------------------------------------------
 public struct VisualCount
 {
-    int BrownHair;
-    int BlondHair;
-    int BlackHair;
-    int RedHair;
-    
-    int HazelEyes;
-    int BlueEyes;
-    int GreenEyes;
+    //--------------------------------------------------------------------------------------------
+    public int BrownHair { public get; private set; }
+    public int BlondHair { public get; private set; }
+    public int BlackHair { public get; private set; }
+    public int RedHair { public get; private set; }
 
-    int WhiteSkin;
-    int BrownSkin;
-    int BlackSkin;
+    //--------------------------------------------------------------------------------------------
+    public int HazelEyes { public get; private set; }
+    public int BlueEyes { public get; private set; }
+    public int GreenEyes { public get; private set; }
 
+    //--------------------------------------------------------------------------------------------
+    public int WhiteSkin { public get; private set; }
+    public int BrownSkin { public get; private set; }
+    public int BlackSkin { public get; private set; }
+
+    //--------------------------------------------------------------------------------------------
     public void Create() { 
         BrownHair = 0; BlondHair = 0; BlondHair = 0; RedHair = 0;
         HazelEyes = 0; GreenEyes = 0; BlueEyes = 0;
         WhiteSkin = 0; BrownSkin = 0; BlackSkin = 0;
     }
+
+    //--------------------------------------------------------------------------------------------
     public void Increment(VisualTraits v)
     {
         IncrementHairColor(v._hairColor);
         IncrementEyeColor(v._eyeColor);
         IncrementSkinColor(v._skinColor);
     }
-    private void IncrementHairColor(HairColor h)
+
+    //--------------------------------------------------------------------------------------------
+    public void IncrementHairColor(HairColor h)
     {
         switch(h)
         {
@@ -77,7 +83,9 @@ public struct VisualCount
                 break;
         }
     }
-    private void IncrementEyeColor(EyeColor e)
+
+    //--------------------------------------------------------------------------------------------
+    public void IncrementEyeColor(EyeColor e)
     {
         switch(e)
         {
@@ -92,7 +100,9 @@ public struct VisualCount
                 break;
         }
     }
-    private void IncrementSkinColor(SkinColor s)
+
+    //--------------------------------------------------------------------------------------------
+    public void IncrementSkinColor(SkinColor s)
     {
         switch(s)
         {

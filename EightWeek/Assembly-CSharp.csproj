@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AlibiEnums\VisualAlibis.cs" />
+     <Compile Include="Assets\Scripts\AlibiPercentage.cs" />
      <Compile Include="Assets\Scripts\CreateCube.cs" />
      <Compile Include="Assets\Scripts\LoadResources.cs" />
      <Compile Include="Assets\Scripts\MathUtil\Probability.cs" />
