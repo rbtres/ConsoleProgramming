@@ -34,20 +34,20 @@ public class VisualAlibiFactory
 public struct VisualCount
 {
     //--------------------------------------------------------------------------------------------
-    public int BrownHair { public get; private set; }
-    public int BlondHair { public get; private set; }
-    public int BlackHair { public get; private set; }
-    public int RedHair { public get; private set; }
+    public int BrownHair { get; private set; }
+    public int BlondHair { get; private set; }
+    public int BlackHair { get; private set; }
+    public int RedHair { get; private set; }
 
     //--------------------------------------------------------------------------------------------
-    public int HazelEyes { public get; private set; }
-    public int BlueEyes { public get; private set; }
-    public int GreenEyes { public get; private set; }
+    public int HazelEyes { get; private set; }
+    public int BlueEyes { get; private set; }
+    public int GreenEyes { get; private set; }
 
     //--------------------------------------------------------------------------------------------
-    public int WhiteSkin { public get; private set; }
-    public int BrownSkin { public get; private set; }
-    public int BlackSkin { public get; private set; }
+    public int WhiteSkin { get; private set; }
+    public int BrownSkin { get; private set; }
+    public int BlackSkin { get; private set; }
 
     //--------------------------------------------------------------------------------------------
     public void Create() { 

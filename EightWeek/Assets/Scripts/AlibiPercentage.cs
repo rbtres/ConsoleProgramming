@@ -107,29 +107,88 @@ public class AlibiPercentage {
         int currentBlk = v.BlackSkin;
         int currentWht = v.WhiteSkin;
 
+        int difBrn;
+        int difBlk;
+        int difWht;
+        //Might need to modifiy to check how far above max
+        //In order to do proper Math
+        difBrn = _maxTraits.BrownSkin - currentBrn;
+        difWht = _maxTraits.WhiteSkin - currentWht;
+        difBlk = _maxTraits.BlackSkin - currentWht;
+
+        int perBrn;
+        int perBlk;
+        int perWht;
+        if (difBrn > 0)
+        {
+            perBrn = (int)Probability.CumlativeStandDev(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes) -
+                (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownSkin, StandDevTypes); 
+        }
+        else
+        {
+            perBrn = (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownSkin, StandDevTypes) -
+                (int)Probability.CumlativeStandDev(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes);
+             
+            //don't know exactly what to do in this case
+        }
+
+        if(difBlk > 0)
+        {
+            perBlk = (int)Probability.CumlativeStandDev(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes) -
+               (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackSkin, StandDevTypes); 
+        }
+        else
+        {
+            perBlk = (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackSkin, StandDevTypes) -
+               (int)Probability.CumlativeStandDev(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes);
+        }
+
+        if(difWht > 0)
+        {
+            perWht = (int)Probability.CumlativeStandDev(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes) -
+               (int)Probability.CumlativeStandDev(currentWht, _maxTraits.WhiteSkin, StandDevTypes); 
+        }
+        else
+        {
+            perWht = (int)Probability.CumlativeStandDev(currentWht, _maxTraits.WhiteSkin, StandDevTypes) -
+               (int)Probability.CumlativeStandDev(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes);
+        }
         SkinColor s = SkinColor.Black;
 
 
         return s;
     }
 
+    //--------------------------------------------------------------------------------------------
     private EyeColor GetEyeColor(VisualCount v)
     {
         int currentHzl = v.HazelEyes;
         int currentBlu = v.BlueEyes;
         int curretnGrn = v.GreenEyes;
 
+        //Same as above function
+        int difHz = _maxTraits.HazelEyes - currentHzl;
+        int difBl = _maxTraits.BlueEyes - currentBlu;
+        int difGrn = _maxTraits.GreenEyes - curretnGrn;
+
         EyeColor e = EyeColor.Blue;
 
         return e;
     }
 
+    //--------------------------------------------------------------------------------------------
     private HairColor GetHairColor(VisualCount v)
     {
         int currentBld = v.BlondHair;
         int currentRed = v.RedHair;
         int currentBlk = v.BlackHair;
         int currentBrn = v.BrownHair;
+
+        //Same as above
+        int difBld = _maxTraits.BlondHair - currentBld;
+        int difRed = _maxTraits.RedHair - currentRed;
+        int difBlk = _maxTraits.BlackHair - currentBlk;
+        int difBrn = _maxTraits.BrownHair - currentBrn;
 
         HairColor h = HairColor.Blond;
 

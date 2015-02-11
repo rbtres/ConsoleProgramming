@@ -8,7 +8,7 @@ public class VisualAlibis
         _visualTraits = vTraits;
     }
 
-    public VisualTraits _visualTraits { public get; private set; }
+    public VisualTraits _visualTraits { get; private set; }
 }
 
 //--------------------------------------------------------------------------------------------
