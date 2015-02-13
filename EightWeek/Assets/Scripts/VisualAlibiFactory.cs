@@ -7,11 +7,15 @@ public class VisualAlibiFactory
     private AlibiPercentage _alibiPercent;
 
     public VisualCount _visualCount;
+
     //--------------------------------------------------------------------------------------------
-    public VisualAlibiFactory()
+    private VisualAlibiFactory()
     {
         _visualCount.Create();
+        _alibiPercent.SetMaxTraits();
     }
+
+    //--------------------------------------------------------------------------------------------
     public static VisualAlibiFactory getInstance()
     {
         if(_visualAlibi == null)
@@ -20,6 +24,7 @@ public class VisualAlibiFactory
         }
         return _visualAlibi;
     }
+
     //--------------------------------------------------------------------------------------------
     public VisualTraits CreateVisualTrait()
     {
