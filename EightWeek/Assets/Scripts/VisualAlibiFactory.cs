@@ -5,7 +5,7 @@ public class VisualAlibiFactory
 {
     static private VisualAlibiFactory _visualAlibi = null;
     private AlibiPercentage _alibiPercent;
-
+    static public int _totalPeople = 0;
     public VisualCount _visualCount;
 
     //--------------------------------------------------------------------------------------------
@@ -24,13 +24,18 @@ public class VisualAlibiFactory
         }
         return _visualAlibi;
     }
-
+    public bool CanCreateNewCharacter()
+    {
+      Probability.CumlativeNormalDis()
+    }
     //--------------------------------------------------------------------------------------------
     public VisualTraits CreateVisualTrait()
     {
         VisualTraits v = _alibiPercent.GetVisualAlibi(_visualCount);
 
         _visualCount.Increment(v);
+        _totalPeople++;
+     
         return v;
     }
 }

@@ -125,37 +125,37 @@ public class AlibiPercentage {
         int perWht;
         if (difBrn > 0)
         {
-            perBrn = (int)Probability.CumlativeStandDev(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownSkin, StandDevTypes); 
+            perBrn = (int)Probability.CumlativeNormalDis(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentBrn, _maxTraits.BrownSkin, StandDevTypes); 
         }
         else
         {
-            perBrn = (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownSkin, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes);
+            perBrn = (int)Probability.CumlativeNormalDis(currentBrn, _maxTraits.BrownSkin, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.BrownSkin, _maxTraits.BrownSkin, StandDevTypes);
              
             //don't know exactly what to do in this case
         }
 
         if(difBlk > 0)
         {
-            perBlk = (int)Probability.CumlativeStandDev(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes) -
-               (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackSkin, StandDevTypes); 
+            perBlk = (int)Probability.CumlativeNormalDis(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes) -
+               (int)Probability.CumlativeNormalDis(currentBlk, _maxTraits.BlackSkin, StandDevTypes); 
         }
         else
         {
-            perBlk = (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackSkin, StandDevTypes) -
-               (int)Probability.CumlativeStandDev(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes);
+            perBlk = (int)Probability.CumlativeNormalDis(currentBlk, _maxTraits.BlackSkin, StandDevTypes) -
+               (int)Probability.CumlativeNormalDis(_maxTraits.BlackSkin, _maxTraits.BlackSkin, StandDevTypes);
         }
 
         if(difWht > 0)
         {
-            perWht = (int)Probability.CumlativeStandDev(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes) -
-               (int)Probability.CumlativeStandDev(currentWht, _maxTraits.WhiteSkin, StandDevTypes); 
+            perWht = (int)Probability.CumlativeNormalDis(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes) -
+               (int)Probability.CumlativeNormalDis(currentWht, _maxTraits.WhiteSkin, StandDevTypes); 
         }
         else
         {
-            perWht = (int)Probability.CumlativeStandDev(currentWht, _maxTraits.WhiteSkin, StandDevTypes) -
-               (int)Probability.CumlativeStandDev(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes);
+            perWht = (int)Probability.CumlativeNormalDis(currentWht, _maxTraits.WhiteSkin, StandDevTypes) -
+               (int)Probability.CumlativeNormalDis(_maxTraits.WhiteSkin, _maxTraits.WhiteSkin, StandDevTypes);
         }
 
         SkinColor s;
@@ -196,35 +196,35 @@ public class AlibiPercentage {
 
         if (difHz > 0)
         {
-            perHz =  (int)Probability.CumlativeStandDev(_maxTraits.HazelEyes, _maxTraits.HazelEyes, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentHzl, _maxTraits.HazelEyes, StandDevTypes); 
+            perHz =  (int)Probability.CumlativeNormalDis(_maxTraits.HazelEyes, _maxTraits.HazelEyes, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentHzl, _maxTraits.HazelEyes, StandDevTypes); 
         }
         else
         {
-            perHz = (int)Probability.CumlativeStandDev(currentHzl, _maxTraits.HazelEyes, StandDevTypes) - 
-                 (int)Probability.CumlativeStandDev(_maxTraits.HazelEyes, _maxTraits.HazelEyes, StandDevTypes);
+            perHz = (int)Probability.CumlativeNormalDis(currentHzl, _maxTraits.HazelEyes, StandDevTypes) - 
+                 (int)Probability.CumlativeNormalDis(_maxTraits.HazelEyes, _maxTraits.HazelEyes, StandDevTypes);
         }
 
         if(difBl > 0)
         {
-            perBl = (int)Probability.CumlativeStandDev(_maxTraits.BlueEyes, _maxTraits.BlueEyes, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentBlu, _maxTraits.BlueEyes, StandDevTypes);
+            perBl = (int)Probability.CumlativeNormalDis(_maxTraits.BlueEyes, _maxTraits.BlueEyes, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentBlu, _maxTraits.BlueEyes, StandDevTypes);
         }
         else
         {
-            perBl = (int)Probability.CumlativeStandDev(currentBlu, _maxTraits.BlueEyes, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.BlueEyes, _maxTraits.BlueEyes, StandDevTypes);
+            perBl = (int)Probability.CumlativeNormalDis(currentBlu, _maxTraits.BlueEyes, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.BlueEyes, _maxTraits.BlueEyes, StandDevTypes);
         }
 
         if (difGrn > 0)
         {
-            perGr = (int)Probability.CumlativeStandDev(_maxTraits.GreenEyes, _maxTraits.GreenEyes, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(curretnGrn, _maxTraits.GreenEyes, StandDevTypes);
+            perGr = (int)Probability.CumlativeNormalDis(_maxTraits.GreenEyes, _maxTraits.GreenEyes, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(curretnGrn, _maxTraits.GreenEyes, StandDevTypes);
         }
         else
         {
-            perGr = (int)Probability.CumlativeStandDev(curretnGrn, _maxTraits.GreenEyes, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.GreenEyes, _maxTraits.GreenEyes, StandDevTypes);
+            perGr = (int)Probability.CumlativeNormalDis(curretnGrn, _maxTraits.GreenEyes, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.GreenEyes, _maxTraits.GreenEyes, StandDevTypes);
         }
 
         int r = _Random.Next(perBl + perGr + perHz);
@@ -268,46 +268,46 @@ public class AlibiPercentage {
 
         if (difBld > 0)
         {
-            perBld = (int)Probability.CumlativeStandDev(_maxTraits.BlondHair, _maxTraits.BlondHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentBld, _maxTraits.BlondHair, StandDevTypes);
+            perBld = (int)Probability.CumlativeNormalDis(_maxTraits.BlondHair, _maxTraits.BlondHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentBld, _maxTraits.BlondHair, StandDevTypes);
         }
         else
         {
-            perBld = (int)Probability.CumlativeStandDev(currentBld, _maxTraits.BlondHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.BlondHair, _maxTraits.BlondHair, StandDevTypes);
+            perBld = (int)Probability.CumlativeNormalDis(currentBld, _maxTraits.BlondHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.BlondHair, _maxTraits.BlondHair, StandDevTypes);
         }
 
         if (difRed > 0)
         {
-            perRed = (int)Probability.CumlativeStandDev(_maxTraits.RedHair, _maxTraits.RedHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentRed, _maxTraits.RedHair, StandDevTypes);
+            perRed = (int)Probability.CumlativeNormalDis(_maxTraits.RedHair, _maxTraits.RedHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentRed, _maxTraits.RedHair, StandDevTypes);
         }
         else
         {
-            perRed = (int)Probability.CumlativeStandDev(currentRed, _maxTraits.RedHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.RedHair, _maxTraits.RedHair, StandDevTypes);
+            perRed = (int)Probability.CumlativeNormalDis(currentRed, _maxTraits.RedHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.RedHair, _maxTraits.RedHair, StandDevTypes);
         }
 
         if (difBlk > 0)
         {
-            perBlk = (int)Probability.CumlativeStandDev(_maxTraits.BlackHair, _maxTraits.BlackHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackHair, StandDevTypes);
+            perBlk = (int)Probability.CumlativeNormalDis(_maxTraits.BlackHair, _maxTraits.BlackHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentBlk, _maxTraits.BlackHair, StandDevTypes);
         }
         else
         {
-            perBlk = (int)Probability.CumlativeStandDev(currentBlk, _maxTraits.BlackHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.BlackHair, _maxTraits.BlackHair, StandDevTypes);
+            perBlk = (int)Probability.CumlativeNormalDis(currentBlk, _maxTraits.BlackHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.BlackHair, _maxTraits.BlackHair, StandDevTypes);
         }
 
         if (difBrn > 0)
         {
-            perBrn = (int)Probability.CumlativeStandDev(_maxTraits.BrownHair, _maxTraits.BrownHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownHair, StandDevTypes);
+            perBrn = (int)Probability.CumlativeNormalDis(_maxTraits.BrownHair, _maxTraits.BrownHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(currentBrn, _maxTraits.BrownHair, StandDevTypes);
         }
         else
         {
-            perBrn = (int)Probability.CumlativeStandDev(currentBrn, _maxTraits.BrownHair, StandDevTypes) -
-                (int)Probability.CumlativeStandDev(_maxTraits.BrownHair, _maxTraits.BrownHair, StandDevTypes);
+            perBrn = (int)Probability.CumlativeNormalDis(currentBrn, _maxTraits.BrownHair, StandDevTypes) -
+                (int)Probability.CumlativeNormalDis(_maxTraits.BrownHair, _maxTraits.BrownHair, StandDevTypes);
         }
 
         HairColor h;
