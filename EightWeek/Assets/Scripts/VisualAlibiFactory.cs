@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 
 public class VisualAlibiFactory
 {
@@ -12,6 +11,7 @@ public class VisualAlibiFactory
     private VisualAlibiFactory()
     {
         _visualCount.Create();
+        _alibiPercent = new AlibiPercentage();
         _alibiPercent.SetMaxTraits();
     }
 
@@ -26,7 +26,22 @@ public class VisualAlibiFactory
     }
     public bool CanCreateNewCharacter()
     {
-      Probability.CumlativeNormalDis()
+
+        float num = Probability.CumlativeNormalDis(_alibiPercent.MeanAmountOfCharacters, _alibiPercent.MeanAmountOfCharacters, _alibiPercent.StandDevOfCharacters);
+        num -= Probability.CumlativeNormalDis(_totalPeople, _alibiPercent.MeanAmountOfCharacters, _alibiPercent.StandDevOfCharacters);
+        if (num > 50)
+        {
+            return true;
+        }
+        else if(num > 10)
+        {
+            int number = _alibiPercent._Random.Next(0, 101);
+            if(number <= num)
+            {
+                return true;
+            }
+        }
+        return false;
     }
     //--------------------------------------------------------------------------------------------
     public VisualTraits CreateVisualTrait()
@@ -63,7 +78,7 @@ public struct VisualCount
     public void Create() { 
         BrownHair = 0; BlondHair = 0; BlondHair = 0; RedHair = 0;
         HazelEyes = 0; GreenEyes = 0; BlueEyes = 0;
-        WhiteSkin = 0; BrownSkin = 0; BlackSkin = 0;
+        WhiteSkin = 0; BrownSkin = 0; BlackSkin = 0; BlackHair = 0;
     }
 
     //--------------------------------------------------------------------------------------------

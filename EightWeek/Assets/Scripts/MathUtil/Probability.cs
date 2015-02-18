@@ -25,6 +25,6 @@ public class Probability {
         {
             ans += NormalDis(i, mean, standDev);
         }
-        return ans;
+        return ans * 100;
     }
 }

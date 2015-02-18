@@ -118,7 +118,7 @@ public class AlibiPercentage {
         //In order to do proper Math
         difBrn = _maxTraits.BrownSkin - currentBrn;
         difWht = _maxTraits.WhiteSkin - currentWht;
-        difBlk = _maxTraits.BlackSkin - currentWht;
+        difBlk = _maxTraits.BlackSkin - currentBlk;
 
         int perBrn;
         int perBlk;
@@ -160,8 +160,8 @@ public class AlibiPercentage {
 
         SkinColor s;
 
-        int r = _Random.Next(perBlk + perBrn + perWht);
-
+        int r = _Random.Next(0,perBlk + perBrn + perWht);
+        
         if( r < perWht)
         {
             s = SkinColor.White;
