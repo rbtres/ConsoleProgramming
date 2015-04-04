@@ -5,12 +5,11 @@ public class LoadResources : MonoBehaviour {
 
 	public static LoadResources LR;
 	// Use this for initialization
-	public GameObject BUILDING;
+	public GameObject FACE;
 
     //--------------------------------------------------------------------------------------------
 	void Awake()
 	{
-        Probability.CumlativeNormalDis(1200, 1000,100);
 		if(LR != null)
 		{
 			GameObject.Destroy(LR);
@@ -30,6 +29,6 @@ public class LoadResources : MonoBehaviour {
 	//This will load all of games resource folder
 	void LoadAllResources()
 	{
-		BUILDING = Resources.Load<GameObject>("BuildingGround");
+		FACE = Resources.Load<GameObject>("Face");
 	}
 }

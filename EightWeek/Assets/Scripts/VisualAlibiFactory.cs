@@ -50,7 +50,8 @@ public class VisualAlibiFactory
 
         _visualCount.Increment(v);
         _totalPeople++;
-     
+       
+
         return v;
     }
 }

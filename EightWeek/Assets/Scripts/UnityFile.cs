@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 public class UnityFile : MonoBehaviour {
     VisualAlibiFactory _factory;
     List<VisualTraits> _visualTraits;
+    List<GameObject> _gameObjectList;
 	// Use this for initialization
 	void Start () {
         _factory = VisualAlibiFactory.getInstance();
         _visualTraits = new List<VisualTraits>();
+        _gameObjectList = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if(_factory.CanCreateNewCharacter())
         {
-            _visualTraits.Add(_factory.CreateVisualTrait());
+            createObject();
+            //Thread thread1 = new Thread(createObject);
+            //thread1.IsBackground = false;
+            //thread1.Start();
         }
         if(Input.GetButtonDown("x"))
         {
@@ -35,11 +41,25 @@ public class UnityFile : MonoBehaviour {
         GUI.Box(new Rect(10, 280, 200, 20), " Total with blue eyes: " + _factory._visualCount.BlueEyes);
         GUI.Box(new Rect(10, 310, 200, 20), " Total with Green eyes: " + _factory._visualCount.GreenEyes);
     }
+    void createObject()
+    {
+        VisualTraits v = _factory.CreateVisualTrait();
+        GameObject c = (GameObject)Instantiate(LoadResources.LR.FACE);
+        c.GetComponent<ColorScript>().setColors(v);
+        c.transform.Translate(-21.0f + _visualTraits.Count * 1.5f, 0, 0);
+        _gameObjectList.Add(c);
+        _visualTraits.Add(v);
+    }
     void reset()
     {
         while(_visualTraits.Count > 0)
         {
             _visualTraits.RemoveAt(0);
+        }
+        while(_gameObjectList.Count > 0)
+        {
+            Destroy(_gameObjectList[0]);
+            _gameObjectList.RemoveAt(0);
         }
         VisualAlibiFactory._totalPeople = 0;
         _factory._visualCount.Create();
