@@ -10,3 +10,15 @@ C:\Users\Rob\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\ICSharpCode.NRe
 C:\Users\Rob\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Rob\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.dll
 C:\Users\Rob\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.pdb
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\UnityEditor.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\UnityEngine.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\nunit.framework.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.dll
+C:\Users\robert.bethune\Desktop\ConsoleProgramming\EightWeek\obj\Debug\Assembly-CSharp.pdb
