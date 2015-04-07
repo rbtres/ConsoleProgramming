@@ -2,9 +2,10 @@
 
 public class VisualAlibiFactory
 {
-    static private VisualAlibiFactory _visualAlibi = null;
+    static private VisualAlibiFactory _visualAlibi;
     private AlibiPercentage _alibiPercent;
     static public int _totalPeople = 0;
+    static int created = 0;
     public VisualCount _visualCount;
 
     //--------------------------------------------------------------------------------------------
@@ -18,9 +19,10 @@ public class VisualAlibiFactory
     //--------------------------------------------------------------------------------------------
     public static VisualAlibiFactory getInstance()
     {
-        if(_visualAlibi == null)
+        if(created == 0)
         {
             _visualAlibi = new VisualAlibiFactory();
+            created++;
         }
         return _visualAlibi;
     }

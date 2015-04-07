@@ -9,23 +9,23 @@ public class UnityFile : MonoBehaviour {
     CheatThread thread;
 	// Use this for initialization
 	void Start () {
-       thread = new CheatThread();
         _factory = VisualAlibiFactory.getInstance();
         _visualTraits = new List<VisualTraits>();
         _gameObjectList = new List<GameObject>();
+        thread = new CheatThread();
         CheatThread.k_playerCreatedEvent += new CheatThread.playerCreated(createObject);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    if(_factory.CanCreateNewCharacter())
-        {
-            thread.createObject();
-        }
+      
+        thread.createObject();
+        
         if(Input.GetButtonDown("x"))
         {
             reset();
         }
+        thread.Update();
 	}
     void OnGUI()
     {
@@ -42,6 +42,11 @@ public class UnityFile : MonoBehaviour {
         GUI.Box(new Rect(10, 310, 200, 20), " Total with Green eyes: " + _factory._visualCount.GreenEyes);
     }
     void createObject(VisualTraits v)
+    {
+        makeTheObject(v);
+    }
+
+    void makeTheObject(VisualTraits v)
     {
         GameObject c = (GameObject)Instantiate(LoadResources.LR.FACE);
         c.GetComponent<ColorScript>().setColors(v);
@@ -62,5 +67,6 @@ public class UnityFile : MonoBehaviour {
         }
         VisualAlibiFactory._totalPeople = 0;
         _factory._visualCount.Create();
+        CheatThread.CANCREATE = true;
     }
 }
